@@ -7,7 +7,7 @@ NOCOLOR='\033[0m'
 get_miner_name() {
     local host_name=$(hostname)
     local ip=$(hostname -I)
-    local miner_name=$host_name"_"$ip
+    local miner_name=$host_name"_"$1"_"$ip
 
     echo "$miner_name"
 }
@@ -30,8 +30,8 @@ fi
 # Display miner info
 
 token=$1
-miner_name=$(get_miner_name)
 thread_number=$(nproc --ignore=$ignore_number_of_threads)
+miner_name=$(get_miner_name $thread_number)
 echo -e "Miner name: ${GREEN}${miner_name}${NOCOLOR}"
 echo -e "Nmber of threads: ${GREEN}${thread_number}${NOCOLOR}"
 
