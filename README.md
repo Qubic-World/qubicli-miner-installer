@@ -4,7 +4,7 @@ This script is a wrapper for installing the [qubic.li client](https://github.com
 
 # Miner name
 
-The name for the miner is generated from hostname and ip
+The name for the miner is generated from hostname, number of thread and ip: `miner_24_88.88.88.88`
 
 # Number of threads
 
