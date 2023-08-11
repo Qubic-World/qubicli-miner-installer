@@ -2,6 +2,8 @@
 
 Script for quick start of qubic.li miner
 
+Without this script, you can install qubic.li miner using the instructions: [qubic.li client](https://github.com/qubic-li/client)
+
 # Miner name
 
 The name for the miner is generated from hostname and ip
