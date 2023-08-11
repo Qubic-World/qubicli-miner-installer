@@ -1,8 +1,6 @@
 # Qubicli Miner Installer
 
-Script for quick start of qubic.li miner
-
-Without this script, you can install qubic.li miner using the instructions: [qubic.li client](https://github.com/qubic-li/client)
+This script is a wrapper for installing the [qubic.li client](https://github.com/qubic-li/client)
 
 # Miner name
 
