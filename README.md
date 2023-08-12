@@ -10,6 +10,9 @@ The name for the miner is generated from hostname, number of thread and ip: `min
 
 The number of threads is set to the maximum possible on the processor. To reduce the number of threads you need to pass the number of threads to be reduced by as the second argument to the script
 `sudo bash installer.sh <token> 2`
+<br></br>
+If you have a total of 24 cores on your processor, passing 2 as the second argument. This will create a miner with `22` threads
+
 
 # Example
 
