@@ -21,7 +21,7 @@ get_distributor_id() {
 
 # Variables
 
-branch="main"
+branch="develop"
 scripts_folder_name="scripts"
 package_installer_file_postfix="-package-installer.sh"
 package_installer_raw_file_url="https://raw.githubusercontent.com/Qubic-World/qubicli-miner-installer/$branch/$scripts_folder_name/$(get_distributor_id)$package_installer_file_postfix"
