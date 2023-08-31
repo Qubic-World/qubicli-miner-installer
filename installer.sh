@@ -73,7 +73,7 @@ systemctl stop qli
 ./qli-Service-install.sh $thread_number $token $miner_name
 
 # Disable AVX512 and enable AVX2
-if [ "$3" == "avx2" ]; the
+if [ "$3" == "avx2" ]; then
     service qli stop
     jq '.Settings += {useAvx2:true}' /q/appsettings.json
     service qli start
