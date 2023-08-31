@@ -18,12 +18,26 @@ If you have a total of 24 cores on your processor, passing 2 as the second argum
 
 ## Run if you have downloaded installer.sh to your computer
 
+```bash
+sudo bash installer.sh <token> [ignore_number_of_threads] [disable_avx512]
 ```
-sudo bash installer.sh <token> [ignore_number_of_threads]
+
+## AVX2
+
+To switch from `AVX512` to `AVX2`, you must add `avx2` to the command. **Important**, if you do not use [ignore_number_of_threads], then you must set 0 after [token]:
+```bash
+sudo bash installer.sh tokentokentoken 0 avx2
 ```
+
 
 ## Running without downloading installer.sh
 
+```bash
+curl https://raw.githubusercontent.com/Qubic-World/qubicli-miner-installer/main/installer.sh | sudo bash -s <token> [ignore_number_of_threads] [avx2]
 ```
-curl https://raw.githubusercontent.com/Qubic-World/qubicli-miner-installer/main/installer.sh | sudo bash -s <token> [ignore_number_of_threads]
+**Important**, if you do not use [ignore_number_of_threads], then you must set 0 after [token]:
+
+### AVX2
+```bash
+curl https://raw.githubusercontent.com/Qubic-World/qubicli-miner-installer/main/installer.sh | sudo bash -s <token> 0 avx2
 ```
