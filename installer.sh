@@ -43,7 +43,8 @@ curl $package_installer_raw_file_url | sudo bash
 toker=$1
 if [ -z "$1" ]; then
     echo "<TOKEN>: Your personal token to access the API"
-    echo "<IGNORENUMBEROFTHREADS> (OPTIONAL) if possible, exclude N processing units"
+    echo "[IGNORE_NUMBER_OF_THREADS] (OPTIONAL) if possible, exclude N processing units"
+    echo "[DISABLE_AVX2] (OPTIONAL) disables AVX512"
     exit 1
 fi
 
