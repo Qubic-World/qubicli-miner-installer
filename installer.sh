@@ -8,7 +8,7 @@ NOCOLOR='\033[0m'
 
 get_miner_name() {
     local host_name=$(hostname)
-    local ip=$(hostname -I)
+    local ip=$(dig +short myip.opendns.com @resolver1.opendns.com)
     local miner_name=$host_name"_"$1"_"$ip
 
     echo "$miner_name"
