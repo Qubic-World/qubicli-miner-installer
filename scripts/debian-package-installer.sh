@@ -1,2 +1,2 @@
 apt update
-apt install jq -y
+apt install jq wine -y
