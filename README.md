@@ -2,42 +2,41 @@
 
 This script is a wrapper for installing the [qubic.li client](https://github.com/qubic-li/client)
 
+# Installer Parameters
+
+## Token
+
+To set a token use `-t token`.
+
+## Setting the number of threads
+
+You can set the number of threads in three ways:
+1. Do not specify anything. In this case all cores on the machine will be used
+2. A specific number of threads can be specified via the flag `-c`: `-c 32`.
+3. Using the `-i` flag, you can specify how many threads to free from mining: `-i value`. If you have only **32** cores and you set `-i 2`, then **30** threads will be created for mining
+
+## AVX2
+
+The default is **Avx512** if you have a processor that supports these instructions. To force the use of **Avx2**, set the `-a` flag to no value
+
+## Version
+
+If you want to use a specific version, use the `-v version` flag: `-v 1.3.9`
+
 # Miner name
 
 The name for the miner is generated from hostname, number of thread and ip: `miner_24_88.88.88.88`
-
-# Number of threads
-
-The number of threads is set to the maximum possible on the processor. To reduce the number of threads you need to pass the number of threads to be reduced by as the second argument to the script
-`sudo bash installer.sh <token> 2`
-<br></br>
-If you have a total of 24 cores on your processor, passing 2 as the second argument. This will create a miner with `22` threads
-
 
 # Example
 
 ## Run if you have downloaded installer.sh to your computer
 
 ```bash
-sudo bash installer.sh <token> [ignore_number_of_threads] [disable_avx512]
+sudo bash installer.sh -v 1.3.9 -a -t eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJJZCI6IjVlNjJhZjhjLWU5ZTgtNDBiMS04ZmMyLTM5Mzg0Mzk5OTcwNyIsIk1pbmluZyI6IiIsIm5iZiI6MTY3MjE3MTIwMywiZXhwIjoxNzAzNzA3MjAzLCJpYXQiOjE2NzIxNzEyMDMsImlzcyI6Imh0dHBzOi8vcXViaWMubGkvIiwiYXVkIjoiaHR0cHM6Ly9xdWJpYy5saS8ifQ.DJkHv_2K0eNiAkjKia8bxag5I4ixOtjk36AGE6zwzxiEFO_w8ovsoLY4ARONUwnak_N-5-W69PJbbKCphyICpQ
 ```
-
-## AVX2
-
-To switch from `AVX512` to `AVX2`, you must add `avx2` to the command. **Important**, if you do not use [ignore_number_of_threads], then you must set 0 after [token]:
-```bash
-sudo bash installer.sh tokentokentoken 0 avx2
-```
-
 
 ## Running without downloading installer.sh
 
 ```bash
-curl https://raw.githubusercontent.com/Qubic-World/qubicli-miner-installer/main/installer.sh | sudo bash -s <token> [ignore_number_of_threads] [avx2]
-```
-**Important**, if you do not use [ignore_number_of_threads], then you must set 0 after [token]:
-
-### AVX2
-```bash
-curl https://raw.githubusercontent.com/Qubic-World/qubicli-miner-installer/main/installer.sh | sudo bash -s <token> 0 avx2
+curl https://raw.githubusercontent.com/Qubic-World/qubicli-miner-installer/main/installer.sh | sudo bash -s -- -a -c 32 -t eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJJZCI6IjVlNjJhZjhjLWU5ZTgtNDBiMS04ZmMyLTM5Mzg0Mzk5OTcwNyIsIk1pbmluZyI6IiIsIm5iZiI6MTY3MjE3MTIwMywiZXhwIjoxNzAzNzA3MjAzLCJpYXQiOjE2NzIxNzEyMDMsImlzcyI6Imh0dHBzOi8vcXViaWMubGkvIiwiYXVkIjoiaHR0cHM6Ly9xdWJpYy5saS8ifQ.DJkHv_2K0eNiAkjKia8bxag5I4ixOtjk36AGE6zwzxiEFO_w8ovsoLY4ARONUwnak_N-5-W69PJbbKCphyICpQ
 ```

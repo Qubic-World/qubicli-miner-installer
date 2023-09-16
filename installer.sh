@@ -89,7 +89,7 @@ then
   exit
 fi
 
-while  getopts $options option;  do
+while getopts $options option;  do
   case $option in
     # Core
     c)
