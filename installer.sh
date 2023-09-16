@@ -34,7 +34,13 @@ get_max_cores() {
 }
 
 help() {
-  echo "Help"
+  echo "
+-t            Token
+-c (optional) Number of cores in use. Used in place of the -i flag
+-i (optional) Ignored number of cores out of the maximum possible on the machine. Used in place of the -c flag
+-a (optional) Use avx2. If the flag is not specified, it will use avx512
+-v (optional) If you need a specific version, you can specify it. For example 1.3.9"
+
 }
 
 validate_options() {
@@ -69,7 +75,6 @@ display_miner_info() {
   else
     echo -e "${GREEN}Version: latest${NOCOLOR}"
   fi
-  
 }
 
 #Arguments
