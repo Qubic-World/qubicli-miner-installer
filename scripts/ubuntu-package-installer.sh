@@ -1,3 +1,3 @@
 # Update packages
 apt update
-apt install jq -y
+apt install jq dotnet6 wine -y
