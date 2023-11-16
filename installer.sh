@@ -52,7 +52,7 @@ validate_options() {
 
 validate_version() {
   if [ -n "$version" ]; then
-    if [[ $(validate_url "https://app.qubic.li/downloads/qli-Client-$version-Linux-x64.tar.gz") -eq false ]]; then
+    if [[ $(validate_url "https://dl.qubic.li/downloads/qli-Client-$version-Linux-x64.tar.gz") -eq false ]]; then
       echo -e "${RED}Could not find a miner with the version: $version${NOCOLOR}"
       exit
     fi
