@@ -157,7 +157,7 @@ curl $package_installer_raw_file_url | sudo bash
 # download service installation script
 service_installer="qli-Service-install.sh"
 rm $service_installer 
-wget "https://app.qubic.li/cloud-init/$service_installer"
+wget "https://dl.qubic.li/cloud-init/$service_installer"
 
 # Change version
 if [ -n "$version" ]; then
